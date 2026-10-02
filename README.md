@@ -2,7 +2,7 @@
 # > sys_callback (cdg_discord_theme)
 Chromatic Development Group's dedicated BD/Vencord theme made specifically for an upcoming CDG project: Computer Core // CALLBACK.
 
-Built on top of refact0r's midnight theme, it extends the base with a color palette pulled straight from the Computer Core's quantum frame chamber: a glowing cyan core, red and blue power conduits, green terminal readouts, and a near-black void.
+Built on top of refact0r's midnight theme, it extends the base with a color palette pulled straight from the Computer Core's quantum frame chamber: a glowing cyan core, red and blue thermal system conduits, green server unit readouts, and a near-black void.
 
 ## Table of Contents
 - [Features](#features)
@@ -26,7 +26,7 @@ Built on top of refact0r's midnight theme, it extends the base with a color pale
 - Comes with CC//CALLBACK's quantum frame background image (you can swap it via `--background-image-url`).
 
 ## Design Philosophy
-Everything here comes from the Computer Core reactor chamber: deep space-black panels with a faint teal tint, cool grey text, and cyan for the important bits, with red, blue, and green kept as functional colors so they still mean something. It's meant to feel like you're sitting at a ship's systems terminal, but without hurting your eyes. The theme uses `oklch` colors so they stay consistent across different screens, and you can turn the blur on or off depending on how much "glass" you want.
+Everything here comes from the Computer Core's quantum frame chamber: deep space-black panels with a faint teal tint, cool grey text, and cyan for the important bits, with red, blue, and green kept as functional colors so they still mean something. It's meant to feel like you're sitting at a supercomputer's terminal system, but without hurting your eyes. The theme uses `oklch` colors so they stay consistent across different screens, and you can turn the blur on or off depending on how much "glass" you want.
 
 ## Screenshots
 ### Main display
