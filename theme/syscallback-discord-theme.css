@@ -1,0 +1,156 @@
+/**
+ * @name sys_callback (official CDG theme)
+ * @description Official Discord client theme developed by the Chromatic Development Group made specifically for Computer Core // CALLBACK. Built on top of refact0r's midnight theme.
+ * @author GlyphicNova
+ * @version 1.0.0
+ * @authorId 1407027034701434980
+*/
+
+/* import theme modules */
+@import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
+@import url('https://fonts.cdnfonts.com/css/zekton');
+
+body {
+    /* font options */
+    --font: 'Zekton Rg', 'figtree'; /* change to '' for default discord font */
+    --code-font: ''; /* change to '' for default discord font */
+    font-weight: 400; /* normal text font weight. DOES NOT AFFECT BOLD TEXT */
+
+    /* sizes */
+    --gap: 12px; /* spacing between panels */
+    --divider-thickness: 4px; /* thickness of unread messages divider and highlighted message borders */
+    --border-thickness: 1px; /* thickness of borders around main panels. DOES NOT AFFECT OTHER BORDERS */
+
+    /* animation/transition options */
+    --animations: on; /* off: disable animations/transitions, on: enable animations/transitions */
+    --list-item-transition: 0.2s ease; /* transition for list items */
+    --dms-icon-svg-transition: 0.4s ease; /* transition for the dms icon */
+    --border-hover-transition: 0.2s ease; /* transition for borders when hovered */
+
+    /* top bar options */
+    --top-bar-height: var(--gap); /* height of the top bar (discord default is 36px, old discord style is 24px, var(--gap) recommended if button position is set to titlebar) */
+    --top-bar-button-position: titlebar; /* off: default position, hide: hide buttons completely, serverlist: move inbox button to server list, titlebar: move inbox button to channel titlebar (will hide title) */
+    --top-bar-title-position: off; /* off: default centered position, hide: hide title completely, left: left align title (like old discord) */
+    --subtle-top-bar-title: off; /* off: default, on: hide the icon and use subtle text color (like old discord) */
+
+    /* window controls */
+    --custom-window-controls: on; /* off: default window controls, on: custom window controls */
+    --window-control-size: 14px; /* size of custom window controls */
+
+    /* dms button options */
+    --custom-dms-icon: custom; /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
+    --dms-icon-svg-url: url('https://refact0r.github.io/midnight-discord/assets/Font_Awesome_5_solid_moon.svg'); /* icon svg url. MUST BE A SVG. */
+    --dms-icon-svg-size: 90%; /* size of the svg (css mask-size property) */
+    --dms-icon-color-before: var(--icon-subtle); /* normal icon color */
+    --dms-icon-color-after: var(--white); /* icon color when button is hovered/selected */
+    --custom-dms-background: off; /* off to disable, image to use a background image (must set url variable below), color to use a custom color/gradient */
+    --dms-background-image-url: url(''); /* url of the background image */
+    --dms-background-image-size: cover; /* size of the background image (css background-size property) */
+    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--cyan-2), var(--red-2)); /* fixed color/gradient (css background property) */
+
+    /* background image options */
+    --background-image: on; /* off: no background image, on: enable background image (must set url variable below) */
+    --background-image-url: url('https://i.postimg.cc/jdRrq5dD/syscallback-Theme-Background.png'); /* url of the background image */
+
+    /* transparency/blur options */
+    /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); */
+    --transparency-tweaks: on; /* off: no changes, on: remove some elements for better transparency */
+    --remove-bg-layer: off; /* off: no changes, on: remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
+    --panel-blur: on; /* off: no changes, on: blur the background of panels */
+    --blur-amount: 12px; /* amount of blur */
+    --bg-floating: hsla(220, 15%, 13%, 0.9); /* set this to a more opaque color if floating panels look too transparent. only applies if panel blur is on  */
+
+    /* chatbar options */
+    --custom-chatbar: separated; /* off: default chatbar, separated: chatbar separated from chat */
+    --chatbar-height: 56px; /* height of the chatbar (56px by default, 47px to align with user panel, 56px recommended for separated) */
+
+    /* other options */
+    --small-user-panel: on; /* off: default user panel, on: smaller user panel like in old discord */
+}
+
+/* color options */
+:root {
+    --colors: on;
+
+    /* text colors */
+    --text-0: hsla(190, 30%, 6%, 1);
+    --text-1: hsl(190, 35%, 95%);
+    --text-2: hsl(190, 22%, 85%);
+    --text-3: hsl(195, 15%, 68%);
+    --text-4: hsl(198, 12%, 50%);
+    --text-5: hsl(200, 10%, 35%);
+
+    /* background and dark colors (space-black with a teal tint) */
+    --bg-1: hsla(195, 18%, 17%, 0.6);
+    --bg-2: hsla(195, 18%, 12%, 0.6);
+    --bg-3: hsla(195, 20%, 8%, 0.6);
+    --bg-4: hsla(190, 22%, 5%, 0.6);
+    --hover: hsla(190, 30%, 50%, 0.1);
+    --active: hsla(190, 30%, 50%, 0.2);
+    --active-2: hsla(190, 30%, 50%, 0.3);
+    --message-hover: hsla(190, 0%, 0%, 0.1);
+
+    /* accent colors (cyan core) */
+    --accent-1: var(--cyan-1);
+    --accent-2: var(--cyan-2);
+    --accent-3: var(--cyan-3);
+    --accent-4: var(--cyan-4);
+    --accent-5: var(--cyan-5);
+    --accent-new: var(--red-2); /* mute/deafen etc. read better in red than cyan */
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent);
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent);
+    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent);
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent);
+
+    /* status indicator colors */
+    --online: var(--green-3);   /* terminal green */
+    --dnd: var(--red-3);        /* cable red */
+    --idle: var(--yellow-2);    /* star specks */
+    --streaming: var(--blue-2); /* cable blue */
+    --offline: var(--text-4);
+
+    /* border colors */
+    --border-light: var(--hover);
+    --border: var(--active);
+    --border-hover: var(--active);
+    --button-border: hsl(190, 0%, 100%, 0.1);
+
+    /* base colors, sampled from the background */
+    --red-1: oklch(75% 0.15 25);
+    --red-2: oklch(70% 0.19 25);
+    --red-3: oklch(65% 0.22 25);   /* cable red */
+    --red-4: oklch(60% 0.21 25);
+    --red-5: oklch(55% 0.19 25);
+
+    --green-1: oklch(88% 0.2 145);
+    --green-2: oklch(83% 0.22 145);
+    --green-3: oklch(78% 0.22 145); /* terminal green */
+    --green-4: oklch(70% 0.2 145);
+    --green-5: oklch(62% 0.18 145);
+
+    --blue-1: oklch(76% 0.13 250);
+    --blue-2: oklch(70% 0.16 252);
+    --blue-3: oklch(63% 0.19 255);  /* cable blue */
+    --blue-4: oklch(57% 0.19 258);
+    --blue-5: oklch(51% 0.18 260);
+
+    --yellow-1: oklch(88% 0.13 100);
+    --yellow-2: oklch(83% 0.14 100); /* star specks */
+    --yellow-3: oklch(78% 0.14 100);
+    --yellow-4: oklch(72% 0.13 100);
+    --yellow-5: oklch(66% 0.12 100);
+
+    /* keeps midnight's purple variables defined, shifted toward the cable blue */
+    --purple-1: oklch(76% 0.12 280);
+    --purple-2: oklch(70% 0.14 280);
+    --purple-3: oklch(64% 0.16 280);
+    --purple-4: oklch(58% 0.16 280);
+    --purple-5: oklch(52% 0.15 280);
+
+    /* cyan core */
+    --cyan-1: oklch(88% 0.13 190);
+    --cyan-2: oklch(83% 0.13 190);
+    --cyan-3: oklch(78% 0.13 190); /* closest to the glowing core */
+    --cyan-4: oklch(72% 0.12 190);
+    --cyan-5: oklch(65% 0.11 190);
+}
